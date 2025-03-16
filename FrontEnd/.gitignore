@@ -1,3 +1,10 @@
+#carpetas 
+.vscode
+node_modules
+package-lock.json
+package.json
+
+
 # Logs
 logs
 *.log

@@ -1,0 +1,38 @@
+.life-coach {
+    padding: 50px 5%;
+    background-color: #fff;
+  }
+  
+  .life-coach-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .coach-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .coach-info {
+    max-width: 500px;
+  }
+  
+  .coach-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .coach-benefits {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .coach-benefits li {
+    font-size: 1.2rem;
+    padding: 8px 0;
+  }
+  

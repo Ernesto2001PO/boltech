@@ -1,0 +1,36 @@
+.courses {
+    padding: 50px 5%;
+    background-color: #ffc82f;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .course-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .course-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .course-list li {
+    font-size: 1.2rem;
+    padding: 8px 0;
+  }
+  
