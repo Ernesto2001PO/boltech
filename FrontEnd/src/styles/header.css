@@ -29,11 +29,26 @@
     list-style: none;
     display: flex;
     gap: 20px;
+    align-items: center;
   }
   
-  .nav-links a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #333;
+  .btn1{
+    background-color: #ffc82f;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  .btn1:hover{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.171);
+    cursor: pointer;
+    border: 1px solid black;
   }
   
+  .loginInput{
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+  }
