@@ -10,7 +10,7 @@ npm install vite
 npm install node.js
 npm install clxs
 npm install express body-parser
-
+npm install ionicons
 
 pasos
 clonar repo 
