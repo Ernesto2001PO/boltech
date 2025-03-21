@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #2a2185;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.contenedor {
+  position: relative;
+  width: 100%;
+}
+
+.navegacion {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: #ffc82f;
+  border-left: 10px solid #ffc82f;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.navegacion.active {
+  width: 80px;
+}
+
+.navegacion ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navegacion ul li {
+  position: relative;
+  width: 95%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.navegacion ul li:hover,
+.navegacion ul li.hovered {
+  background-color: var(--white);
+}
+
+.navegacion ul li:nth-child(1) {
+  margin-bottom: 20px;
+  pointer-events: none;
+}
+
+.navegacion ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
+.navegacion ul li:hover a,
+.navegacion ul li.hovered a {
+  color: var(--blue);
+}
+
+.navegacion ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+.navegacion ul li a .icon ion-icon {
+  font-size: 28px
+}
+
+.navegacion ul li a .icon img.user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navegacion ul li a .titulo {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.principal {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+.principal.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.menu-hamburguesa {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.tarjeta{
+  margin-bottom: 20px;
+}
+.contenedor-tarjetas {
+  position: relative;
+  width: 100%;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 50px;
+}
+
+.contenedor-tarjetas .tarjeta {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contenedor-tarjetas .tarjeta .numero {
+  position: relative;
+  font-weight: 500;
+  font-size: 40px;
+  color: var(--blue);
+}
+
+.contenedor-tarjetas .tarjeta .tarjeta-nombre {
+  color: var(--black2);
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+.contenedor-tarjetas .tarjeta .icono-tarjeta {
+  font-size: 56px;
+  color: var(--black2);
+}
+
+.contenedor-tarjetas .tarjeta:hover {
+  background: var(--blue);
+}
+.contenedor-tarjetas .tarjeta:hover .numero,
+.contenedor-tarjetas .tarjeta:hover .tarjeta-nombre,
+.contenedor-tarjetas .tarjeta:hover .icono-tarjeta {
+  color: var(--white);
+}
+
+
+#inicio {
+  display: block;
+}
+
+.detalles {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario{
+  margin-bottom: 20px;
+}
+
+#crear-docente-formulario,
+#crear-estudiante-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contenedor-input-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.contenedor-input-formulario label {
+  font-weight: bold;
+  color: var(--black1);
+}
+
+.contenedor-input-formulario input {
+  padding: 10px;
+  border: 1px solid var(--black2);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contenedor-input-formulario button {
+  background: var(--blue);
+  color: var(--white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contenedor-input-formulario button:hover {
+  background: #1a1545;
+}
+
+.detalles .formulario,
+.detalles .historial-docentes, .historial-estudiantes {
+  position: relative;
+  display: grid;
+  min-height: auto;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  width: 100%;
+}
+
+.formulario-titulo, .historial-titulo-docentes, .historial-titulo-estudiantes {
+  margin-bottom: 20px;
+}
+
+.formulario-titulo h2, .historial-titulo-docentes h2, .historial-titulo-estudiantes h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.detalles table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.detalles table thead td {
+  font-weight: 600;
+}
+
+.detalles .historial-estudiantes table tr td, 
+.detalles .historial-docentes table tr td {
+  color: var(--black1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.detalles .historial-estudiantes table tr td:last-child, 
+.detalles .historial-docentes table tr td:last-child {
+  border-bottom: none;
+}
+
+.detalles .historial-estudiantes table tr td:first-child, 
+.detalles .historial-docentes table tr td:first-child {
+  padding: 15px;
+}
+
+.detalles .historial-estudiantes table tr td:last-child, 
+.detalles .historial-docentes table tr td:last-child {
+  text-align: end;
+}
+
+.btn-editar,
+.btn-eliminar {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+  display: inline-flex;
+}
+
+.btn-editar {
+  background: #4ecdc4;
+  color: var(--white);
+}
+
+.btn-eliminar {
+  background: #ff6b6b;
+  color: var(--white);
+}
+
+.btn-editar ion-icon,
+.btn-eliminar ion-icon {
+  font-size: 19px;
+}
+
+@media (max-width: 991px) {
+  .navegacion {
+    left: -300px;
+  }
+  .navegacion.active {
+    width: 300px;
+    left: 0;
+  }
+  .principal {
+    width: 100%;
+    left: 0;
+  }
+  .principal.active {
+    left: 300px;
+  }
+  .contenedor-tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .historial-docentes,
+  .historial-estudiantes {
+    overflow-x: auto; 
+  }
+
+  .historial-docentes table,
+  .historial-estudiantes table {
+    width: 100%;
+    min-width: 600px; 
+  }
+
+  .historial-docentes table thead,
+  .historial-estudiantes table thead {
+    display: table-header-group; 
+  }
+
+  .historial-docentes table tbody,
+  .historial-estudiantes table tbody {
+    display: table-row-group; 
+  }
+
+  .historial-docentes table tr,
+  .historial-estudiantes table tr {
+    display: table-row; 
+  }
+
+  .historial-docentes table td,
+  .historial-estudiantes table td {
+    display: table-cell; 
+    padding: 10px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .detalles {
+    grid-template-columns: 1fr;
+  }
+  .historial-docentes,
+  .historial-estudiantes {
+    padding: 10px; 
+  }
+
+  .historial-docentes table,
+  .historial-estudiantes table {
+    min-width: 100%;
+  }
+
+  .historial-docentes table td,
+  .historial-estudiantes table td {
+    padding: 8px; 
+  }
+
+  .btn-editar,
+  .btn-eliminar {
+    padding: 3px; 
+    font-size: 14px; 
+  }
+
+  .btn-editar ion-icon,
+  .btn-eliminar ion-icon {
+    font-size: 16px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-tarjetas {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .navegacion {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navegacion.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .principal.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+
+  .historial-docentes,
+  .historial-estudiantes {
+    padding: 5px; 
+  }
+
+  .historial-docentes table td,
+  .historial-estudiantes table td {
+    padding: 5px; 
+  }
+
+  .btn-editar,
+  .btn-eliminar {
+    padding: 2px; 
+    font-size: 12px; 
+  }
+
+  .btn-editar ion-icon,
+  .btn-eliminar ion-icon {
+    font-size: 12px; 
+  }
+}
