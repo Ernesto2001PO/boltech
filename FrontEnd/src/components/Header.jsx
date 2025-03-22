@@ -1,4 +1,4 @@
-import '../styles/Header.css';
+import '../styles/header.css';
 import { useAuth } from '../providers/AuthProvider';
 import { useState } from 'react';
 
