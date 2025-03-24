@@ -1,20 +1,23 @@
-import React from 'react';
-import HomePage from './pages/HomePage';
-import AdminPage from './pages/AdminPage';
-import {RouterProvider, createHashRouter} from 'react-router-dom';
-import { createRoot } from 'react-dom/client';
-import './styles/main.css';
-import './styles/adminStyles.css';
-import AuthProvider from './providers/AuthProvider';
-const router= createHashRouter([
-  {path: "/", element: <HomePage/>},
-  {path: "/admin", element: <AdminPage/>}
-])
+import React from "react";
+import HomePage from "./pages/HomePage";
+import AdminPage from "./pages/AdminPage";
+import DocentePage from "./pages/DocentePage";
+import { RouterProvider, createHashRouter } from "react-router-dom";
+import { createRoot } from "react-dom/client";
+import "./styles/main.css";
+import "./styles/adminStyles.css";
+import AuthProvider from "./providers/AuthProvider";
 
-createRoot(document.getElementById('root')).render(
+const router = createHashRouter([
+  { path: "/", element: <HomePage /> },
+  { path: "/admin", element: <AdminPage /> },
+  { path: "/docente", element: <DocentePage /> },
+]);
+
+createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>
 );

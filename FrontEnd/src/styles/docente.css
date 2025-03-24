@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+:root {
+  --blue: #162b71;
+  --yellow: #ffc82f;
+  --yellow-dark: #e6b800; /* Amarillo más oscuro */
+  --white: #fff;
+  --gray: #444444;
+  --black1: #222;
+  --black2: #999;
+}
+
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.contenedor {
+  display: flex;
+}
+
+/* 📌 Sidebar */
+.navegacion {
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  background: var(--yellow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Asegura que "Cerrar Sesión" quede abajo */
+}
+
+/* 📌 Perfil del Docente en Sidebar */
+.perfil-docente-sidebar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--white);
+}
+
+.nombre-docente {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--black1);
+}
+
+/* 📌 Menú del Sidebar */
+.menu-sidebar {
+  width: 100%;
+  flex-grow: 1; /* Permite que ocupe espacio sin empujar "Cerrar Sesión" */
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+/* 📌 Botón de Materias */
+.materia-btn {
+  width: 100%;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  position: relative; /* Esto asegura que la lista se posicione correctamente */
+  transition: background 0.3s;
+}
+
+.materia-btn:hover {
+  background: #1e194a;
+}
+
+/* 📌 Lista Desplegable de Materias */
+.materia-lista {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: none; /* Oculta la lista por defecto */
+  background: var(--yellow); /* Fondo amarillo */
+  border-radius: 5px;
+  width: 100%;
+  flex-direction: column; /* Asegura que la lista se muestre verticalmente */
+  align-items: center;
+}
+
+.materia-lista.open {
+  display: flex; /* Muestra la lista cuando se activa */
+}
+
+.materia-lista li {
+  background: var(--yellow); /* Fondo de los items igual a amarillo */
+  color: var(--black1);
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.materia-lista li:hover {
+  background: var(--yellow-dark); /* Amarillo más oscuro en el hover */
+  color: var(--white);
+}
+
+/* 📌 Botón de Cerrar Sesión (Siempre Abajo) */
+.cerrar-sesion-container {
+  width: 100%;
+  text-align: center;
+  margin-top: auto; /* Lo empuja al final */
+}
+
+.cerrar-sesion-btn {
+  width: 100%;
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.cerrar-sesion-btn:hover {
+  background: darkred;
+}
+
+/* 📌 Contenido Principal */
+.principal {
+  margin-left: 250px;
+  padding: 40px;
+  width: calc(100% - 250px);
+}
+
+.perfil-docente {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--gray);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.btn-cerrar-sesion {
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-cerrar-sesion:hover {
+  background: darkred;
+}
+
+/* 📌 Tarjetas de Materias */
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.materia-nombre {
+  font-size: 20px;
+  color: var(--blue);
+}
+
+.materia-descripcion {
+  font-size: 16px;
+  color: var(--black2);
+}
+
+/* 📌 Responsividad */
+@media (max-width: 768px) {
+  .navegacion {
+    width: 100px;
+  }
+
+  .principal {
+    margin-left: 100px;
+    width: calc(100% - 100px);
+  }
+}
