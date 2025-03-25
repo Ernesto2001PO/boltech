@@ -11,6 +11,16 @@ npm install node.js
 npm install clxs
 npm install express body-parser
 
+-- backend 
+npm install express
+npm install cors
+
+
+npm install nodemon 
+--
+servidor corriendo
+node app.js  o nodemon app.js
+
 
 pasos
 clonar repo 
