@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors'); 
 const {db } = require('./config/db-config');
 const app = express();
+
+
 app.use(cors());
 
 
