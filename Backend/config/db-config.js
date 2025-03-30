@@ -7,10 +7,6 @@ const {Sequelize} = require('sequelize');
 
 
 
-
-
-
-
 const db = new Sequelize({
     dialect : 'postgres',
     database : process.env.DB_NAME,
@@ -41,5 +37,5 @@ db.authenticate()
 
 
 
-module.exports = {db };
+module.exports = { db };
 
