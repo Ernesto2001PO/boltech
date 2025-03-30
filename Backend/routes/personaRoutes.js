@@ -4,6 +4,7 @@ const personaController = require('../controllers/personaController');
 
 
 router.get('/estudiantes', personaController.getEstudiantes);
+router.post('/estudiantes', personaController.crearEstudiante);
 
 
 
