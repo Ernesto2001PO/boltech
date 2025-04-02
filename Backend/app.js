@@ -22,7 +22,7 @@ app.use('/api', personaRoutes);
 
 //Sincronizar la base de datos
 
-db.sync({force: false})
+db.sync({force: false, alter: true})
     .then(() => console.log('Base de datos sincronizada'))
     .catch((error) => console.log('Error al sincronizar la base de datos', error));
 

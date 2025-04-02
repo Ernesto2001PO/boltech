@@ -28,6 +28,10 @@ const Persona = db.define("Persona", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  fecha_nacimiento: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
 },{
   tableName: "personas",
   timestamps: false, 
