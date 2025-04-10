@@ -20,6 +20,7 @@ const personaRoutes = require('./routes/personaRoutes');
 
 app.use('/api', personaRoutes);
 
+
 //Sincronizar la base de datos
 
 db.sync({force: false, alter: true})

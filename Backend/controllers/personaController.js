@@ -56,3 +56,47 @@ exports.crearEstudiante = async (req, res) => {
   }
 };
 
+
+exports.createProfesor = async (req, res) => {
+  try {
+    const esquemaProfesor = zod.object({
+      nombre: zod.string().min(1, "El nombre es requerido"),
+      apellido: zod.string().min(1, "El apellido es requerido"),
+      correo: zod.string().email("El email debe tener un formato válido"),
+      contraseña: zod.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
+      celular: zod.number().min(1, "El celular es requerido").int("El celular debe ser un número entero"),
+      fecha_nacimiento: zod.string()
+    });
+
+    const datosValidados = esquemaProfesor.parse(req.body);
+
+    const nuevoProfesor = await Persona.create({
+      ...datosValidados,
+      rol: 2,
+    })
+
+    res.status(201).json(nuevoProfesor);
+  } catch (error) {
+    console.error("Error al crear profesor:", error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+
+}
+
+exports.getProfesores = async (req, res) => {
+  try {
+    const profesores = await Persona.sequelize.query('SELECT * FROM personas WHERE rol = 2');
+    res.json(profesores[0]);
+  } catch (error) {
+    console.error('Error al obtener professores:', error);
+    res.status(400).json({ error: error.message });
+  }
+}
+
+
+
+
+
+
+
+
