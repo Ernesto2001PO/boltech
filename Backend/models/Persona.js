@@ -1,7 +1,6 @@
 const { DataTypes } = require("sequelize");
 const { db } = require("../config/db-config");
 
-
 const Persona = db.define("Persona", {
   id_persona: {
     type: DataTypes.INTEGER,
@@ -29,6 +28,13 @@ const Persona = db.define("Persona", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  fecha_nacimiento: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
+},{
+  tableName: "personas",
+  timestamps: false, 
 });
 
 
