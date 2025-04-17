@@ -9,6 +9,13 @@ const personaController = require('../controllers/personaController');
 router.get('/estudiantes', personaController.getEstudiantes);
 router.post('/estudiantes', personaController.crearEstudiante);
 
+router.get('/profesores', personaController.getProfesores);
+router.post('/profesores', personaController.createProfesor);
+
+router.post('/login', personaController.login);
+
+
+
 
 
 
