@@ -1,13 +1,10 @@
 require('dotenv').config();
-
-
-const { log } = require('console');
 const {Sequelize} = require('sequelize');
 
 
 
 
-const db = new Sequelize({
+const sequelize = new Sequelize({
     dialect : 'postgres',
     database : process.env.DB_NAME,
     username : process.env.DB_USER,
@@ -24,7 +21,7 @@ const db = new Sequelize({
 
 });
 
-db.authenticate()
+sequelize.authenticate()
   .then(() => {
     console.log('Connection has been established successfully.');
   })
@@ -37,5 +34,5 @@ db.authenticate()
 
 
 
-module.exports = { db };
+module.exports = { sequelize, Sequelize };
 

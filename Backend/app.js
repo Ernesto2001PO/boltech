@@ -1,8 +1,8 @@
-require('dotenv').config({ path: '../.env' });  
+require('dotenv').config({ path: '../.env' });
 const express = require('express');
-const cors = require('cors'); 
-const {db } = require('./config/db-config');
+const cors = require('cors');
 const app = express();
+const db = require('./models/')
 
 app.use(cors());
 
@@ -16,14 +16,14 @@ console.log("DB_USER:", process.env.DB_USER);
 console.log("DB_PASSWORD:", process.env.DB_PASSWORD);
 
 // Rutas 
-const personaRoutes = require('./routes/personaRoutes');
 
-app.use('/api', personaRoutes);
+require('./routes')(app);
+
+
 
 
 //Sincronizar la base de datos
-
-db.sync({force: false, alter: true})
+db.sequelize.sync({ force: false, alter: false })
     .then(() => console.log('Base de datos sincronizada'))
     .catch((error) => console.log('Error al sincronizar la base de datos', error));
 

@@ -1,50 +1,49 @@
-const {DataTypes} = require("sequelize");
-const { db } = require("../config/db-config");
+const { DataTypes } = require("sequelize");
 const { Materia } = require("./Materia");
 const { Persona } = require("./Persona");
 
-const Nota = db.define("Nota", {
-    id_nota: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-    },
-    gestion: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    nota: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
-    },
-    id_persona: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'personas',
-            key: 'id_persona'
+
+module.exports = function (sequelize) {
+    const Nota = sequelize.define("Nota", {
+        id_nota: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
         },
-    },
-    id_materia: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'materia',
-            key: 'id_materia'
+        gestion: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
-    },
-  
-},{
-    tableName: "nota",
-    timestamps: false, 
-});
+        nota: {
+            type: DataTypes.FLOAT,
+            allowNull: false,
+        },
+        id_persona: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'personas',
+                key: 'id_persona'
+            },
+        },
+        id_materia: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'materia',
+                key: 'id_materia'
+            },
+        },
 
-module.exports = { Nota };
+    }, {
+        tableName: "nota",
+        timestamps: false,
+    });
 
-// Referencias de claves foráneas
-Nota.belongsTo(Materia, { foreignKey: 'id_materia' });
-Nota.belongsTo(Persona, { foreignKey: 'id_persona' });
+    module.exports = { Nota };
 
+    return Nota;
+}
 
 
 
